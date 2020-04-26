@@ -197,7 +197,7 @@
 
 
   $("#speed").change(function () {
-         var degerim = $("#speed").value;
+         var degerim = $("#speed").val();
 
          deger = deger-degerim;
 
@@ -243,7 +243,7 @@
  }
  var karmasiklik = 0;
  karmasiklik = countOuter+countInner+countSwap;
- $(".karmasiklikDegeri").append("<h3 class='text-white'>Karmaşıklık Adım Sayısı :"+karmasiklik+"</h3>")
+ $(".karmasiklikBilgi").text("Karmaşıklık Değeri :"+karmasiklik);
  console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap,'Karmaşıklık :',karmasiklik);
  return array;
 }
