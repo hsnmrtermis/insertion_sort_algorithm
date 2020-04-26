@@ -3,11 +3,8 @@
 Bu çalışma algoritmaların analizi dersi vizesi için hazırlanmıştır.Çalışmada dizideki elemanları insertion sort sıralama algoritması daha açıklayıcı olması amacıyla animasyon şeklinde gösterilmiştir.
 Ödevi Yapan : **Hasan Mert ERMİŞ**
 
+![Uygulama Gifi](uygulamagif.gif). 
 
-## Uygulamadan Görüntüler
-![Uygulama Resmi](https://github.com/hsnmrtermis/insertion_sort_algorithm/blob/master/siteresmi.png)
-
-![Uygulama Gifi](uygulamagif.gif)
 
 ### Uygulamayı İndirme Adımları
 **1)** Uygulamayı İndir
