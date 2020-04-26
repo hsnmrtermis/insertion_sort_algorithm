@@ -24,10 +24,10 @@ Bu çalışma algoritmaların analizi dersi vizesi için hazırlanmıştır.Çal
 
 
 ### Uygulama Özellikleri
-**1-** Diziye Eleman Ekleme
-**2-** Dizideki Elemanları Yenileme
-**3-** Animasyon Hızını Arttırıp Azaltma
-**4-** Animasyonu Başlatma
-**5-** Animasyonu Başa Alma
-**6-** Algoritmanın Zaman Karmaşıklığı Değerini Bulma
-**7-** Diziyi Sıralı,Ters Sıralı ve Rastgele Olarak Sıralama 
+**1-** Diziye Eleman Ekleme.   
+**2-** Dizideki Elemanları Yenileme.   
+**3-** Animasyon Hızını Arttırıp Azaltma.  
+**4-** Animasyonu Başlatma.  
+**5-** Animasyonu Başa Alma.  
+**6-** Algoritmanın Zaman Karmaşıklığı Değerini Bulma.   
+**7-** Diziyi Sıralı,Ters Sıralı ve Rastgele Olarak Sıralama    
