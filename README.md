@@ -1,6 +1,6 @@
 # Algoritmaların Analizi Vize Ödevi
 
-Bu çalışma algoritmaların analizi dersi vizesi için hazırlanmıştır.Çalışmada dizideki elemanları insertion sort sıralama algoritması daha açıklayıcı olması amacıyla animasyon şeklinde gösterilmiştir.
+Bu çalışma algoritmaların analizi dersi vizesi için hazırlanmıştır.Çalışmada dizideki elemanları insertion sort sıralama algoritması daha açıklayıcı olması amacıyla animasyon şeklinde gösterilmiştir.     
 Ödevi Yapan : **Hasan Mert ERMİŞ**
 
 ![Uygulama Gifi](uygulamagif.gif). 
