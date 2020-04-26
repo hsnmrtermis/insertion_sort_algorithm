@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><link rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="alertifyjs/css/alertify.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Insertion Sort</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Algoritmaların Analizi Vize Ödevi <span class="sr-only">(current)</span></a>
+            </li>
+
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+
+          </form>
+    </div>
+</nav>
+
+
+    <div class="container">
+        <div class="row  mt-5">
+
+            <div class="col-6 border">
+                <div id="insertion-code">
+
+                    <pre>
+<b>ALGORITHM</b>
+   //Insertion Sort Algorithm
+   //Input: Array A[0..n-1]
+   //Output: Array S[0..n-1] of A's elements sorted
+    <b>for</b> j = 1 <b>to</b> A.length
+            key = A[j]
+            //Insert A[j] into the sorted sequence A[1...j-1]
+            i = j - 1
+            <b>while</b> i > 0 and A[i] > key
+                        A[i+1] = A[i]
+                        i = i - 1
+            A[i + 1] = key
+                        </pre>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-3 border ">
+                <div id="insertion">
+                    <div id="insertion-list">
+                       <h3>Insertion Sort</h3>
+
+                    </div>
+                </div></div>
+
+            <div class="col-3 border-bottom border-right border-top">
+            <button type="button" id="yenileBtn" class="btn btn-outline-primary btn-block mt-2">Dizi Elemanlarını Değiştir</button>
+              <hr>
+                <div class="form-group">
+                    <label for="deger">Diziye Eleman Ekle </label>
+                    <input type="number" step="1" min="0"  max="200" class="form-control" id="deger">
+                </div>
+                <button id="elemanEkleBtn" type="button" class="btn btn-primary btn-block"><i class="fas fa-plus"></i>&nbsp;Ekle</button>
+                <hr>
+
+                    <div class="form-group">
+                        <label for="speed">Animasyon Hızı</label>
+                        <input type="range" min="0" value="300" max="900" class="form-control-range" id="speed">
+                    </div>
+
+
+                <hr>
+                <div class="form-group">
+                    <label for="siralama">Dizi Tipi</label>
+                    <select class="form-control" id="siralama">
+                      <option value="1">Sıralı</option>
+                      <option value="2">Rastgele</option>
+                      <option value="3">Tersten Sıralı</option>
+
+                    </select>
+                    <button class="btn btn-info btn-block" id="sortTypeBtn">Dizi Sıralamasını Değiştir</button>
+                  </div>
+                  <hr>
+                <button class="btn btn-outline-success btn-block " id="insertion-sort" type="submit"><i class="fas fa-play"></i>&nbsp;Çalıştır</button>
+                <br>
+                <button class="btn btn-outline-danger btn-block " id="insertion-reset"><i class="fas fa-hand-paper"></i>&nbsp;Sıfırla</button>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10 karmasiklikDegeri border text-center mt-2 bg-danger">
+                <h2 id="karmasiklikBilgi">Karmaşıklık Değeri Hesaplanmadı...</h2>
+                <button class="btn btn-success btn block" id="karmasiklikBtn">Karmaşıklığı Hesapla</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-10 text-center border">
+                <h2>Hasan Mert ERMİŞ</h2>
+            <h3>1421012077</h3>
+            <h4>Algoritma Analizi Dersi Vize Ödevi</h4>
+            </div>
+
+        </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js" ></script>
+    <script src="http://codeorigin.jquery.com/color/jquery.color.plus-names-2.1.2.min.js" ></script>
+    <script src="jquery.animatedsort.js"></script>
+    <script src="fontawesome-free-5.13.0-web/js/all.js"></script>
+    <script src="alertifyjs/alertify.js"></script>
+
+    <script type="text/javascript">
+
+      $(function(){
+        diziyiDoldur();
+      })
+
+         var karmasiklikDiziDegerleri = degerler;
+         var deger = 1000;
+         var degerler = [2,3,4,5];
+         $("#insertion-list").animatedSort({
+                 stepTime: 600,
+                 highlightColor: "teal",
+                 listType: degerler,
+                 sortedColor: "#e4701d",
+                 sortAlgorithm: "insertion",
+                 animationTrigger: {event: "click", selector: "#insertion-sort"},
+                 resetTrigger: {event: "click", selector: "#insertion-reset"}
+             });
+
+
+             $("#speed").change(function () {
+            var degerim = $("#speed").value;
+
+            deger = deger-degerim;
+
+
+
+
+            $("#insertion-list").html("");
+            $("#insertion-list").prepend(" <h3>Insertion Sort</h3>");
+            $("#insertion-list").animatedSort({
+                stepTime: deger,
+                highlightColor: "teal",
+                listType: degerler,
+                sortedColor: "#e4701d",
+                sortAlgorithm: "insertion",
+                animationTrigger: {event: "click", selector: "#insertion-sort"},
+                resetTrigger: {event: "click", selector: "#insertion-reset"}
+            });
+
+        })
+
+
+             $("#elemanEkleBtn").click(function(){
+      var gelenDeger =    $("#deger").val();
+      if(gelenDeger == ""){
+          alertify.error("Diziye Boş Değer Girilemez.",5);
+      }else {
+
+          degerler.push(gelenDeger);
+          $("#insertion-list").html("");
+          $("#insertion-list").prepend(" <h3>Insertion Sort</h3>");
+          $("#insertion-list").animatedSort({
+              stepTime: deger,
+              highlightColor: "teal",
+              listType: degerler,
+              sortedColor: "#e4701d",
+              sortAlgorithm: "insertion",
+              animationTrigger: {event: "click", selector: "#insertion-sort"},
+              resetTrigger: {event: "click", selector: "#insertion-reset"}
+          });
+          $("#deger").val("");
+      }
+  })
+
+
+  $("#speed").change(function () {
+         var degerim = $("#speed").value;
+
+         deger = deger-degerim;
+
+
+
+
+         $("#insertion-list").html("");
+         $("#insertion-list").prepend(" <h3>Insertion Sort</h3>");
+         $("#insertion-list").animatedSort({
+             stepTime: deger,
+             highlightColor: "teal",
+             listType: degerler,
+             sortedColor: "#e4701d",
+             sortAlgorithm: "insertion",
+             animationTrigger: {event: "click", selector: "#insertion-sort"},
+             resetTrigger: {event: "click", selector: "#insertion-reset"}
+         });
+
+     })
+
+     $("#karmasiklikBtn").on("click",function () {
+            karmasiklikHesapla(degerler);
+            $("#karmasiklikBilgi").hide();
+        })
+
+     function karmasiklikHesapla(array) {
+ var countOuter = 0;
+ var countInner = 0;
+ var countSwap = 0;
+
+
+ for(var i = 0; i < array.length; i++) {
+   countOuter++;
+   var temp = array[i];
+   var j = i - 1;
+   while (j >= 0 && array[j] > temp) {
+     countInner++;
+     countSwap++;
+     array[j + 1] = array[j];
+     j--;
+   }
+   array[j + 1] = temp;
+ }
+ var karmasiklik = 0;
+ karmasiklik = countOuter+countInner+countSwap;
+ $(".karmasiklikDegeri").append("<h3 class='text-white'>Karmaşıklık Adım Sayısı :"+karmasiklik+"</h3>")
+ console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap,'Karmaşıklık :',karmasiklik);
+ return array;
+}
+
+$("#yenileBtn").on("click",function(){
+  diziyiDoldur();
+})
+
+function diziyiDoldur(){
+
+
+        degerler = [];
+        for(var i=0;i<10;i++){
+            degerler.push(randomSayiUret(0,100));
+        }
+
+        diziyiGoster();
+
+
+
+
+}
+
+function diziyiGoster(){
+    $("#insertion-list").html("");
+            $("#insertion-list").prepend(" <h3>Insertion Sort</h3>");
+            $("#insertion-list").animatedSort({
+                stepTime: deger,
+                highlightColor: "teal",
+                listType: degerler,
+                sortedColor: "#e4701d",
+                sortAlgorithm: "insertion",
+                animationTrigger: {event: "click", selector: "#insertion-sort"},
+                resetTrigger: {event: "click", selector: "#insertion-reset"}
+            });
+}
+
+function randomSayiUret(min,max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
+$("#sortTypeBtn").on("click",function(){
+            siralamaKontrol();
+        })
+
+        function siralamaKontrol(){
+            $gelenSiralama = $("#siralama").val();
+            if($gelenSiralama == 1){
+                normalSirala();
+            }else if($gelenSiralama == 2){
+                diziyiDoldur();
+            }else if($gelenSiralama == 3){
+                terstenSirala();
+            }else{
+                console.log("Böyle bir işlem bulunmuyor.");
+                alertify.error("Böyle bir işlem bulunmuyor.",20);
+            }
+        }
+
+        function terstenSirala(){
+            degerler.sort(function(a,b){return b-a})
+            alertify.success("Dizi sıralaması değiştirildi.Tersten Sıralı Yapıldı",5);
+            for(var i=0;i<degerler.length;i++){
+                console.log(i+". değer :"+degerler[i]);
+            }
+            $("#insertion-list").html("");
+            $("#insertion-list").prepend(" <h3>Insertion Sort</h3>");
+            $("#insertion-list").animatedSort({
+                stepTime: deger,
+                highlightColor: "teal",
+                listType: degerler,
+                sortedColor: "#e4701d",
+                sortAlgorithm: "insertion",
+                animationTrigger: {event: "click", selector: "#insertion-sort"},
+                resetTrigger: {event: "click", selector: "#insertion-reset"}
+            });
+
+        }
+
+        function normalSirala(){
+          degerler.sort(function(a,b){return a-b})
+          alertify.success("Dizi Sıralaması Değiştirildi.Küçükten büyüğe sıralandı.",5);
+          for(var j=0;j<degerler.length;j++){
+            console.log(j+".deger :"+degerler[j]);
+          }
+
+          $("#insertion-list").html("");
+          $("#insertion-list").prepend(" <h3>Insertion Sort</h3>");
+          $("#insertion-list").animatedSort({
+              stepTime: deger,
+              highlightColor: "teal",
+              listType: degerler,
+              sortedColor: "#e4701d",
+              sortAlgorithm: "insertion",
+              animationTrigger: {event: "click", selector: "#insertion-sort"},
+              resetTrigger: {event: "click", selector: "#insertion-reset"}
+          });
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
