@@ -105,7 +105,9 @@
         <div class="row justify-content-center">
             <div class="col-10 karmasiklikDegeri border text-center mt-2 bg-danger">
                 <h2 id="karmasiklikBilgi">Karmaşıklık Değeri Hesaplanmadı...</h2>
+
                 <button class="btn btn-success btn block" id="karmasiklikBtn">Karmaşıklığı Hesapla</button>
+                <div class="karmasiklikYeri"></div>
             </div>
         </div>
 
@@ -243,7 +245,7 @@
  }
  var karmasiklik = 0;
  karmasiklik = countOuter+countInner+countSwap;
- $(".karmasiklikDegeri").append("<h3 class='text-white'>Karmaşıklık Değeri :"+karmasiklik+"</h3>")
+ $(".karmasiklikYeri").html("<h3 class='text-white'>Karmaşıklık Değeri :"+karmasiklik+"</h3>")
  console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap,'Karmaşıklık :',karmasiklik);
  return array;
 }
