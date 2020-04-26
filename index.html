@@ -243,7 +243,7 @@
  }
  var karmasiklik = 0;
  karmasiklik = countOuter+countInner+countSwap;
- $(".karmasiklikBilgi").text("Karmaşıklık Değeri :"+karmasiklik);
+ $(".karmasiklikDegeri").append("<h3 class='text-white'>Karmaşıklık Değeri :"+karmasiklik+"</h3>")
  console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap,'Karmaşıklık :',karmasiklik);
  return array;
 }
